@@ -59,7 +59,7 @@
 
 /* enums */
 enum { CurNormal, CurResize, CurMove, CurLast }; /* cursor */
-enum { SchemeNorm, SchemeSel, SchemeLt, SchemeStatus, SchemeBarbox, SchemeTitle }; /* color schemes */
+enum { SchemeNorm, SchemeSel, SchemeTitle, SchemeLt, SchemeStatus, SchemeIndOff, SchemeIndOn, SchemeSel2, SchemeUrgent }; /* color schemes */
 enum { NetSupported, NetWMName, NetWMState, NetWMCheck,
        NetWMFullscreen, NetActiveWindow, NetWMWindowType,
        NetWMWindowTypeDialog, NetClientList, NetLast }; /* EWMH atoms */
@@ -716,13 +716,24 @@ drawbar(Monitor *m)
 	x = 0;
 	for (i = 0; i < LENGTH(tags); i++) {
 		w = TEXTW(tags[i]);
-		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeSel : SchemeNorm]);
-		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
-		if (occ & 1 << i) {
-			drw_setscheme(drw, scheme[SchemeBarbox]);
-			drw_rect(drw, x + (w / 4), bh - boxw, w / 2, boxw,
-				m == selmon && selmon->sel && selmon->sel->tags & 1 << i,
-				urg & 1 << i);
+        if ( m == selmon && selmon->sel && selmon->sel->tags & 1 << i && !(selmon->sel->tags & m->tagset[m->seltags] & 1 << i) )
+            drw_setscheme(drw, scheme[SchemeSel2]);
+        else if (urg & 1 << i )
+            drw_setscheme(drw, scheme[SchemeUrgent]);
+        else
+            drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeSel : SchemeNorm]);
+		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], 0);
+		if (occ & 1 << i){
+            if (urg & 1 << i ) {
+                drw_setscheme(drw, scheme[SchemeLt]);
+                drw_rect(drw, x, 0, w, boxw, 1, 0);
+            }
+			drw_setscheme(drw, scheme[
+				(m == selmon && selmon->sel && selmon->sel->tags & 1 << i) ? SchemeIndOn : SchemeIndOff
+			]);
+			drw_rect(drw, x, bh - boxw, w, boxw,
+				1,
+				0);
 		}
 		x += w;
 	}
