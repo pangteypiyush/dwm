@@ -99,6 +99,8 @@ static Key keys[] = {
 	{ 0,			  XF86XK_AudioRaiseVolume, spawn,          SHCMD("amixer set Master 5%+") },
 	{ 0,			  XF86XK_AudioMute,        spawn,          SHCMD("amixer set Master toggle") },
 	{ MODKEY,                       XK_Menu,   spawn,          SHCMD("rofi -show combi") },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("rofi -show combi") },
+	{ MODKEY|ControlMask,           XK_p,      spawn,          SHCMD("passmenu_rofi") },
 	{ MODKEY|ControlMask,           XK_Menu,   spawn,          SHCMD("passmenu_rofi") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ ALTMOD,                       XK_Tab,    focusstack,     {.i = +1 } },
