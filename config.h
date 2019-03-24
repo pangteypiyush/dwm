@@ -17,9 +17,11 @@ static const char col_cyan[]        = "#ffcc00";
 
 static const char col_wall[]        = "#262626";
 static const char col_blue[]        = "#2f9dfb";
+static const char col_blue2[]       = "#005fff";
 static const char col_yellow[]      = "#fcba04";
 static const char col_yellow_wall[] = "#7e5f22";
 static const char col_white[]       = "#f3f3f3";
+static const char col_green[]       = "#5faf00";
 static const char col_red1[]        = "#a50104";
 static const char col_red2[]        = "#590004";
 static const char col_red3[]        = "#250001";
@@ -31,14 +33,14 @@ static const char *colors[][3]      = {
 	[SchemeUrgent]   = { col_gray3,   col_wall,    col_gray2},
 	[SchemeTitle]    = { col_gray3,   col_wall,    col_gray2 },
 	[SchemeLt]       = { col_yellow,  col_wall,    col_gray2 },
+	[SchemeNotify]   = { col_blue2,   col_wall,    col_gray2 },
 	[SchemeStatus]   = { col_yellow,  col_wall,    col_gray2 },
-	[SchemeIndOff]   = { col_gray3,   col_wall,    col_gray2 },
+	[SchemeIndOff]   = { col_green,   col_wall,    col_gray2 },
 	[SchemeIndOn]    = { col_red1,    col_wall,    col_gray2 },
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "﫸", "", "", "", "" };
-
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -52,6 +54,8 @@ static const Rule rules[] = {
 	{ "Slack",    NULL,       NULL,       1 << 6,       0,           -1 },
 	{ "Guake",    NULL,       NULL,       ~0,           1,           -1 },
 	{ "copyq",    NULL,       NULL,       0,            1,           -1 },
+	{ "Hexchat",  NULL,       NULL,       1 << 4,       0,           -1 },
+	{ NULL,       NULL,       "Cmus",     1 << 5,       0,           -1 },
 };
 
 /* layout(s) */
@@ -88,9 +92,14 @@ static const char *termcmd[]  = { "gnome-terminal", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_p,      spawn,          SHCMD("rofi -show run") },
 	{ ALTMOD|ShiftMask,             XK_x,      spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("nautilus") },
+	{ 0,			  XF86XK_AudioLowerVolume, spawn,          SHCMD("amixer set Master 5%-") },
+	{ 0,			  XF86XK_AudioRaiseVolume, spawn,          SHCMD("amixer set Master 5%+") },
+	{ 0,			  XF86XK_AudioMute,        spawn,          SHCMD("amixer set Master toggle") },
+	{ MODKEY,                       XK_Menu,   spawn,          SHCMD("rofi -show combi") },
+	{ MODKEY|ControlMask,           XK_Menu,   spawn,          SHCMD("passmenu_rofi") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ ALTMOD,                       XK_Tab,    focusstack,     {.i = +1 } },
 	{ ALTMOD|ShiftMask,             XK_Tab,    focusstack,     {.i = -1 } },
@@ -99,7 +108,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
-	{ MODKEY,                       XK_grave,  view,           {0} },
+	{ ALTMOD,                       XK_grave,  view,           {0} },
 	{ ALTMOD|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
