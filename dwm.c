@@ -59,7 +59,7 @@
 
 /* enums */
 enum { CurNormal, CurResize, CurMove, CurLast }; /* cursor */
-enum { SchemeNorm, SchemeSel, SchemeTitle, SchemeLt, SchemeStatus, SchemeIndOff, SchemeIndOn, SchemeSel2, SchemeUrgent }; /* color schemes */
+enum { SchemeNorm, SchemeSel, SchemeTitle, SchemeLt, SchemeStatus, SchemeIndOff, SchemeIndOn, SchemeSel2, SchemeUrgent, SchemeNotify }; /* color schemes */
 enum { NetSupported, NetWMName, NetWMState, NetWMCheck,
        NetWMFullscreen, NetActiveWindow, NetWMWindowType,
        NetWMWindowTypeDialog, NetClientList, NetLast }; /* EWMH atoms */
@@ -725,7 +725,7 @@ drawbar(Monitor *m)
 		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], 0);
 		if (occ & 1 << i){
             if (urg & 1 << i ) {
-                drw_setscheme(drw, scheme[SchemeLt]);
+                drw_setscheme(drw, scheme[SchemeNotify]);
                 drw_rect(drw, x, 0, w, boxw, 1, 0);
             }
 			drw_setscheme(drw, scheme[
