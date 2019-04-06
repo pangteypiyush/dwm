@@ -9,34 +9,48 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const char *fonts[]          = { "SauceCodePro Nerd Font:size=11" };
 static const char dmenufont[]       = "SauceCodePro Nerd Font:size=11";
-static const char col_gray1[]       = "#262626";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#000000";
-static const char col_cyan[]        = "#ffcc00";
 
-static const char col_wall[]        = "#262626";
-static const char col_blue[]        = "#2f9dfb";
-static const char col_blue2[]       = "#005fff";
-static const char col_yellow[]      = "#fcba04";
-static const char col_yellow_wall[] = "#7e5f22";
-static const char col_white[]       = "#f3f3f3";
-static const char col_green[]       = "#5faf00";
-static const char col_red1[]        = "#a50104";
-static const char col_red2[]        = "#590004";
-static const char col_red3[]        = "#250001";
+// gruvbox
+static const char col_gb_bg[]        = "#282828";
+static const char col_gb_fg[]        = "#ebdbb2";
+
+static const char col_gb_red1[]     = "#cc241d";
+static const char col_gb_red2[]     = "#fb4934";
+
+static const char col_gb_green1[]   = "#98971a";
+static const char col_gb_green2[]   = "#b8bb26";
+
+static const char col_gb_yellow1[]  = "#d79921";
+static const char col_gb_yellow2[]  = "#fabd2f";
+
+static const char col_gb_blue1[]    = "#458588";
+static const char col_gb_blue2[]    = "#83a598";
+
+static const char col_gb_purple1[]  = "#b16286";
+static const char col_gb_purple2[]  = "#83869b";
+
+static const char col_gb_aqua1[]    = "#689d6a";
+static const char col_gb_aqua2[]    = "#8ec07c";
+
+static const char col_gb_gray1[]    = "#a89984";
+static const char col_gb_gray2[]    = "#928374";
+
+static const char col_gb_orange1[]  = "#d65d0e";
+static const char col_gb_orange2[]  = "#fe8019";
+// gruvbox
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm]     = { col_gray3,   col_wall,    col_gray2 },
-	[SchemeSel]      = { col_wall,    col_yellow,  col_yellow },
-	[SchemeSel2]     = { col_gray3,   col_yellow_wall,col_gray2},
-	[SchemeUrgent]   = { col_gray3,   col_wall,    col_gray2},
-	[SchemeTitle]    = { col_gray3,   col_wall,    col_gray2 },
-	[SchemeLt]       = { col_yellow,  col_wall,    col_gray2 },
-	[SchemeNotify]   = { col_blue2,   col_wall,    col_gray2 },
-	[SchemeStatus]   = { col_yellow,  col_wall,    col_gray2 },
-	[SchemeIndOff]   = { col_green,   col_wall,    col_gray2 },
-	[SchemeIndOn]    = { col_red1,    col_wall,    col_gray2 },
+	[SchemeNorm]     = { col_gb_fg,      col_gb_bg,      col_gb_bg },
+	[SchemeSel]      = { col_gb_orange2, col_gb_bg,      col_gb_orange2 },
+	[SchemeSel2]     = { col_gb_aqua2,   col_gb_bg,      col_gb_gray1 },
+	[SchemeUrgent]   = { col_gb_red1,    col_gb_bg,      col_gb_orange2 },
+	[SchemeTitle]    = { col_gb_fg,      col_gb_bg,      col_gb_bg },
+	[SchemeLt]       = { col_gb_orange2, col_gb_bg,      col_gb_bg },
+	[SchemeNotify]   = { col_gb_red1,    col_gb_bg,      col_gb_bg },
+	[SchemeStatus]   = { col_gb_orange2, col_gb_bg,      col_gb_bg },
+	[SchemeIndOff]   = { col_gb_aqua2,   col_gb_bg,      col_gb_bg },
+	[SchemeIndOn]    = { col_gb_blue1,   col_gb_bg,      col_gb_bg },
 };
 
 /* tagging */
@@ -87,7 +101,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, NULL };
 static const char *termcmd[]  = { "gnome-terminal", NULL };
 
 static Key keys[] = {
