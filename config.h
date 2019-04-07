@@ -41,16 +41,16 @@ static const char col_gb_orange2[]  = "#fe8019";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm]     = { col_gb_fg,      col_gb_bg,      col_gb_bg },
+	[SchemeNorm]     = { col_gb_gray2,   col_gb_bg,      col_gb_bg },
 	[SchemeSel]      = { col_gb_orange2, col_gb_bg,      col_gb_orange2 },
-	[SchemeSel2]     = { col_gb_aqua2,   col_gb_bg,      col_gb_gray1 },
-	[SchemeUrgent]   = { col_gb_red1,    col_gb_bg,      col_gb_orange2 },
+	[SchemeSel2]     = { col_gb_fg,      col_gb_bg,      col_gb_bg },
+	[SchemeUrgent]   = { col_gb_fg,      col_gb_bg,      col_gb_bg },
 	[SchemeTitle]    = { col_gb_fg,      col_gb_bg,      col_gb_bg },
 	[SchemeLt]       = { col_gb_orange2, col_gb_bg,      col_gb_bg },
 	[SchemeNotify]   = { col_gb_red1,    col_gb_bg,      col_gb_bg },
-	[SchemeStatus]   = { col_gb_orange2, col_gb_bg,      col_gb_bg },
-	[SchemeIndOff]   = { col_gb_aqua2,   col_gb_bg,      col_gb_bg },
-	[SchemeIndOn]    = { col_gb_blue1,   col_gb_bg,      col_gb_bg },
+	[SchemeStatus]   = { col_gb_aqua2,   col_gb_bg,      col_gb_bg },
+	[SchemeIndOff]   = { col_gb_green2,  col_gb_bg,      col_gb_bg },
+	[SchemeIndOn]    = { col_gb_blue2,   col_gb_bg,      col_gb_bg },
 };
 
 /* tagging */
