@@ -7,7 +7,7 @@ Screenshot
 ----------
 Checkout branch `screenshot`
 
-![mar19](https://raw.githubusercontent.com/pangteypiyush/dwm/screenshot/mar19/1.png)
+![mar19](https://raw.githubusercontent.com/pangteypiyush/dwm/screenshot/gruvbox/1.png)
 
 
 Requirements
