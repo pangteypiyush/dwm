@@ -7,7 +7,7 @@ Screenshot
 ----------
 Checkout branch `screenshot`
 
-![mar19](https://raw.githubusercontent.com/pangteypiyush/dwm/screenshot/gruvbox/1.png)
+![gruvbox](https://raw.githubusercontent.com/pangteypiyush/dwm/screenshot/gruvbox/1.png)
 
 
 Requirements
@@ -17,8 +17,7 @@ In order to build dwm you need the Xlib header files.
 
 Installation
 ------------
-Checkout branch `ppang-config` and run `make clean install`
-
+Checkout branch `gruvbox` and run `make clean install`, or use [PKGBUILD](https://github.com/pangteypiyush/dwm-pkgbuild) for ArchLinux.
 
 Configuration
 -------------
