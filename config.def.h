@@ -24,6 +24,7 @@ static const char *colors[][3]      = {
 	[SchemeUrgent] = { col_gray3,   col_cyan,  col_gray2 },
 	[SchemeTitle]  = { col_gray4, col_cyan,  col_cyan  },
 	[SchemeLt]     = { col_yellow,  col_gray1, col_gray2 },
+	[SchemeNotify] = { col_yellow,  col_gray1, col_gray2 },
 	[SchemeStatus] = { col_blue,    col_gray1, col_gray2 },
 	[SchemeIndOff] = { col_gray3,   col_wall,  col_gray2 },
 	[SchemeIndOn]  = { col_gray3,   col_wall,  col_gray2 },
