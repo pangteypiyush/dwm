@@ -6,10 +6,9 @@ dwm (dynamic window manager) is an extremely fast, small, and dynamic window man
 
 Screenshot
 ----------
-Checkout branch `screenshot`
+Checkout [Gallery][gallery] for more screenshots
 
-![gruvbox](https://raw.githubusercontent.com/pangteypiyush/dwm/screenshot/gruvbox/1.png)
-
+![gruvbox](https://raw.githubusercontent.com/wiki/pangteypiyush/dwm/screenshots/2019/03/06/1.png)
 
 Requirements
 ------------
@@ -18,8 +17,15 @@ In order to build dwm you need the Xlib header files.
 
 Installation
 ------------
-Checkout branch `gruvbox` and run `make clean install`, or use [PKGBUILD](https://github.com/pangteypiyush/dwm-pkgbuild) for ArchLinux.
+Checkout branch `gruvbox` and run `make clean install`, or use [PKGBUILD](https://github.com/pangteypiyush/dwm/tree/pkgbuild) from `pkgbuild` branch.
 
-Configuration
--------------
-Link for [Dotfiles](https://github.com/pangteypiyush/dotfiles)
+
+Links
+-----
+
+ - [Gallery][gallery]
+ - [Dotfiles](https://github.com/pangteypiyush/dotfiles)
+
+
+[gallery]: https://github.com/pangteypiyush/dwm/wiki/Gallery
+[wiki]: https://github.com/pangteypiyush/wiki
