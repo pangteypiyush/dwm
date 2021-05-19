@@ -1,0 +1,8 @@
+*
+!.gitignore
+!PKGBUILD
+!.SRCINFO
+!config.h
+!*.diff
+!*.patch
+!README.md
