@@ -64,12 +64,15 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            0,           -1 },
-	{ "firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "firefox",  "Navigator",NULL,       1 << 8,       0,           -1 },
 	{ "Google-chrome",NULL,   NULL,       1 << 7,       0,           -1 },
+	{ "personal", "Navigator",NULL,       1 << 7,       0,           -1 },
 	{ "Slack",    NULL,       NULL,       1 << 6,       0,           -1 },
 	{ "Guake",    NULL,       NULL,       ~0,           1,           -1 },
 	{ "copyq",    NULL,       NULL,       0,            1,           -1 },
 	{ "Hexchat",  NULL,       NULL,       1 << 4,       0,           -1 },
+	{ "discord",  NULL,       NULL,       1 << 4,       0,           -1 },
+	{ NULL,       NULL,       "AlsaMixer",1 << 3,       0,           -1 },
 	{ NULL,       NULL,       "Cmus",     1 << 5,       0,           -1 },
 };
 
