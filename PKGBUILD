@@ -1,7 +1,7 @@
 # Maintainer: Piyush Pangtey <gokuvsvegita at gmail dot com>
 
 pkgname=dwm
-pkgver=gruvbox.e814c44
+pkgver=version
 pkgrel=1
 _tagver="gruvbox"
 pkgdesc="DWM by suckless"
@@ -18,13 +18,13 @@ sha256sums=(
 )
 
 pkgver() {
-  cd "${pkgname}"
-  printf "%s.%s" "$_tagver" "$(git rev-parse --short HEAD)"
+    cd "${pkgname}"
+    printf "%s.%s" "$_tagver" "$(git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g')"
 }
 
 prepare() {
-	cd $pkgname
-	git checkout $_tagver
+    cd $pkgname
+    git checkout $_tagver
 }
 
 build() {
