@@ -8,7 +8,7 @@ pkgdesc="DWM by suckless"
 arch=('x86_64')
 url="https://dwm.suckless.org"
 license=('MIT')
-depends=('freetype2' 'libx11' 'libxcb' 'libxft')
+depends=('freetype2' 'libx11' 'libxcb' 'libxft' 'libxinerama')
 makedepends=('make')
 source=(
     "dwm::git+https://github.com/pangteypiyush/dwm"
