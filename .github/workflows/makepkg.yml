@@ -1,0 +1,37 @@
+name: makepkg
+
+on:
+  push:
+    branches:
+      - gruvbox
+    tags:
+      - '*'
+  workflow_dispatch:
+
+jobs:
+  makepkg:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout pkgbuild branch
+        uses: actions/checkout@v2
+        with:
+          ref: pkgbuild
+
+      - name: Build package
+        uses: addnab/docker-run-action@v3
+        with:
+          image: pangteypiyush/archlinux:latest
+          options: -v ${{ github.workspace }}:/home/builder
+          shell: bash
+          run: |
+            sudo chmod o+rw . -R \
+              && sudo pacman -Syy \
+              && makepkg -scCfm --noconfirm
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: '*.pkg.*'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
