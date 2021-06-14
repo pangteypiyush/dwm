@@ -27,10 +27,6 @@ Checkout branch `gruvbox` and run `make clean install`, or use [PKGBUILD](https:
  - Branch: [feature/ppang-dwm-alttag][ppang-dwm-alttag]
  - Link: https://dwm.suckless.org/patches/alternativetags
 
-### Clean monocle
- - Description: remove monocle client count
- - Branch: [feature/ppang-dwm-cleanmonocle][ppang-dwm-cleanmonocle]
-
 ### Spawntag
  - Description: spawn application by directly clicking a tag
  - Branch: [feature/ppang-dwm-spawntag][ppang-dwm-spawntag]
@@ -61,6 +57,10 @@ Checkout branch `gruvbox` and run `make clean install`, or use [PKGBUILD](https:
  - Branch: [feature/ewmhtags][ewmhtags]
  - Link: https://dwm.suckless.org/patches/ewmhtags
 
+### Monocle symbol
+ - Branch: [feature/dwm-monoclesymbol][monoclesymbol]
+ - Link: https://dwm.suckless.org/patches/monoclesymbol
+
 ## Links
  - [Gallery][gallery]
  - [Dotfiles](https://github.com/pangteypiyush/dotfiles)
@@ -74,8 +74,8 @@ Checkout branch `gruvbox` and run `make clean install`, or use [PKGBUILD](https:
 [dwm-pertag]: https://github.com/pangteypiyush/dwm/tree/feature/dwm-pertag
 [dwm-shiftview]: https://github.com/pangteypiyush/dwm/tree/feature/dwm-shiftview
 [ewmhtags]: https://github.com/pangteypiyush/dwm/tree/feature/ewmhtags
+[monoclesymbol]: https://github.com/pangteypiyush/dwm/tree/feature/dwm-monoclesymbol
 [ppang-dwm-alttag]: https://github.com/pangteypiyush/dwm/tree/feature/ppang-dwm-alttag
-[ppang-dwm-cleanmonocle]: https://github.com/pangteypiyush/dwm/tree/feature/ppang-dwm-cleanmonocle
 [ppang-dwm-gaplessgrid]: https://github.com/pangteypiyush/dwm/tree/feature/ppang-dwm-gaplessgrid
 [ppang-dwm-spawntag]: https://github.com/pangteypiyush/dwm/tree/feature/ppang-dwm-spawntag
 [ppang-dwm-uselessgaps]: https://github.com/pangteypiyush/dwm/tree/feature/ppang-dwm-uselessgaps
