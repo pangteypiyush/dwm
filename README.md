@@ -30,6 +30,7 @@ Checkout branch `gruvbox` and run `make clean install`, or use [PKGBUILD](https:
 ### Spawntag
  - Description: spawn application by directly clicking a tag
  - Branch: [feature/ppang-dwm-spawntag][ppang-dwm-spawntag]
+ - Link: https://dwm.suckless.org/patches/spawntag
 
 ## Community Patches
 
