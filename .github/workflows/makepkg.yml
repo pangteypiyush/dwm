@@ -20,13 +20,21 @@ jobs:
       - name: Build package
         uses: addnab/docker-run-action@v3
         with:
-          image: pangteypiyush/archlinux:latest
+          image: archlinux:base-devel
           options: -v ${{ github.workspace }}:/home/builder
           shell: bash
           run: |
-            sudo chmod o+rw . -R \
-              && sudo pacman -Syy \
-              && makepkg -scCfm --noconfirm
+            cd /home/builder
+            pacman -Syy \
+              && pacman -S --noconfirm \
+                git \
+                freetype2 \
+                libx11 \
+                libxcb \
+                libxft \
+                libxinerama
+            chmod o+rw . -R \
+              && runuser -u nobody -- makepkg -scCfm --noconfirm
 
       - name: Release
         uses: softprops/action-gh-release@v1

@@ -107,8 +107,8 @@ static const Layout layouts[] = {
 #define GTKCMD(cmd) { .v = (const char*[]){ "/usr/bin/gtk-launch", cmd, NULL } }
 
 /* commands */
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, NULL };
+// static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
+// static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, NULL };
 static const char *termcmd[]  = { "gnome-terminal", NULL };
 
 static const Arg tagexec[] = {
