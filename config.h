@@ -8,7 +8,7 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "SauceCodePro Nerd Font:size=11" };
-static const char dmenufont[]       = "SauceCodePro Nerd Font:size=11";
+// static const char dmenufont[]       = "SauceCodePro Nerd Font:size=11";
 
 // gruvbox
 static const char col_gb_bg[]        = "#282828";
@@ -113,13 +113,13 @@ static const char *termcmd[]  = { "gnome-terminal", NULL };
 
 static const Arg tagexec[] = {
 	{ .v = termcmd },
-	GTKCMD("org.gnome.Nautilus.desktop"),
-	GTKCMD("visual-studio-code.desktop"),
+	GTKCMD("nemo.desktop"),
+	GTKCMD("code.desktop"),
 	SHCMD("lxterminal -t AlsaMixer -e /usr/bin/alsamixer"),
 	GTKCMD("discord"),
 	GTKCMD("cmus"),
 	{ .v = termcmd },
-	GTKCMD("personal-firefox"),
+	{ .v = termcmd },
 	GTKCMD("firefox")
 };
 
@@ -127,7 +127,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("rofi -show run") },
 	{ ALTMOD|ShiftMask,             XK_x,      spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_e,      spawn,          SHCMD("nautilus") },
+	{ MODKEY,                       XK_e,      spawn,          SHCMD("nemo") },
 	{ 0,			  XF86XK_AudioLowerVolume, spawn,          SHCMD("amixer set Master 5%-") },
 	{ 0,			  XF86XK_AudioRaiseVolume, spawn,          SHCMD("amixer set Master 5%+") },
 	{ 0,			  XF86XK_AudioMute,        spawn,          SHCMD("amixer set Master toggle") },
