@@ -1,3 +1,8 @@
+> [!Important]  
+> **Archived in favor of Wayland DE/WM.**
+
+---
+
 ![DWM](https://raw.githubusercontent.com/pangteypiyush/dwm/master/dwm.png)
 
 dwm (dynamic window manager) is an extremely fast, small, and dynamic window manager for X.
